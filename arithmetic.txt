@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+#include<stdlib.h>
+class arithemetic
+{
+    public:
+    int n1,n2;
+    arithemetic(int a,int b)
+    {
+        n1=a;
+        n2=b;
+    }
+    ~arithemetic()
+    {
+     cout<<"\nDestructor called";   
+    }
+};
+ 
+
+int main()
+{
+    char ch,d;
+    int a,b,n3;
+    do{
+    cout<<"\nChoose arithemetic operation(+,-,*,/,%) you want to perform : ";
+    cin>>d;
+    cout << "\nEnter two numbers: ";
+    cin >> a>> b;
+    arithemetic c(a,b);
+    switch(d)
+    {
+    case '+':n3=c.n1+c.n2;
+              cout<<"\nSum of "<<c.n1<<" and "<<c.n2<< " is "<<n3;
+              break;
+    case '-':  n3=c.n1-c.n2;            
+              cout<<"\nsubstraction of "<<c.n1<<" and "<<c.n2<<" is "<<n3;
+              break;
+    case '*':  n3=c.n1*c.n2;        
+              cout<<"\nmultiplication of "<<c.n1<<" and "<<c.n2<< " is "<<n3;
+              break;
+    case '/': n3=c.n1/c.n2;         
+              cout<<"\ndivision of "<<c.n1<<" and "<<c.n2<<" is "<<n3;
+              break;
+    case '%':n3=c.n1%c.n2;
+             cout<<"\n modulous of "<<c.n1<<" and "<<c.n2<<" is "<<n3;
+             break;
+    default:cout<<"\ninvalid operation!!!";
+            break;
+    }
+    
+    cout<<"\nDo you want to perform another operation(y/n) : "<<flush;
+    cin>>ch;
+    system("clear");
+    }while(ch=='y'||ch=='Y');
+    
+    
+    return 0;
+}
+
+
+ 
+
+
